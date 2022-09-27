@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>New Departments</title>
+    <link rel="stylesheet" href="img/style.css" type="text/css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<main  class=" d-flex justify-content-center align-items-center flex-column">
+    <h1> New department</h1>
+    <form action="/departmentDetails">
+        <div  class="form-floating mb-3 " style="width: 350px">
+            <input type="text" name="NameOfDepartment" id="NameOfDepartment"  class="form-control" autofocus required placeholder="e.g Rice Dep.">
+            <label for="NameOfDepartment">Name department:</label>
+
+        </div>
+        <div   class="form-floating mb-3 " style="width: 350px" >
+            <input type="text" name="Photo" id="Photo"  class="form-control" autofocus placeholder="e.g John">
+            <label for="Photo">Photo</label>
+
+        </div>
+        <div>
+            <input type="checkbox" name="Refrigerated" id="Refrigerated">
+            <label for="Refrigerated">Refrigerated</label>
+
+        </div>
+
+
+        <select name="supermarketIndex" class="custom-select form-select" aria-label="floating label select" required>
+            <option value = "-1">In which supermarket?</option>
+            <option th:each = "supermarket : ${Supermarkets}"
+                    th:text = "${supermarket.getName()}"
+                    th:value = "${supermarketStat.index}"/>
+        </select>
+
+
+
+        <select name="staffIndex" class="custom-select form-select" aria-label="floating label select" required>
+            <option value = "-1">Who is responsible for this department?</option>
+            <option th:each = "staff : ${StaffMembers}"
+                    th:text = "${staff.getFirstName} + ' ' + ${staff.getSurName}"
+                    th:value = "${staffStat.index}"/>
+
+
+        </select>
+
+        <div>
+            <input type="submit" name="submit" value="Confirm department">
+        </div>
+
+    </form>
+
+    <footer>
+        <a href="/">Back to home page</a>
+    </footer>
+</main>
+
+</body>
+</html>

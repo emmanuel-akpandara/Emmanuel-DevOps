@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Supermarkets and Departments</title>
+    <link rel="stylesheet" href="img/style.css" type="text/css">
+</head>
+<body>
+<h1 th:text="'Supermarkets (and number of departments):'"></h1>
+<ul>
+    <li th:each="supermarket : ${Supermarkets}">
+        <a th:href="@{/10_savedDepartments(supermarketIndex=${supermarketStat.index})}"
+           th:text="${supermarket.getName()} + ' (' + ${supermarket.getNumberOfDepartments()} + ')'"></a>
+    </li>
+</ul>
+<footer>
+    <a href="/">Back to home page</a>
+</footer>
+</body>
+</html>

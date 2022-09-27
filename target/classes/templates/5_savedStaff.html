@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Saved Staff</title>
+    <link rel="stylesheet" href="img/style.css" type="text/css">
+</head>
+<body>
+<h1 th:text="'Our staff:'"></h1>
+<ul>
+    <li th:each="staff : ${StaffMembers}" th:text="${staff.toString()}">
+
+    </li>
+</ul>
+<footer>
+    <a href="/">Back to home page</a>
+</footer>
+</body>
+</html>
+

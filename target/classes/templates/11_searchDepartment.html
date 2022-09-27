@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Department Info</title>
+  <link rel="stylesheet" href="img/style.css" type="text/css">
+</head>
+<body>
+<h1 th:text="'We found this department: ' + ${FoundDepartment.getName()}"></h1>
+<p th:if="${FoundDepartment.isRefrigerated()}">- Refrigerated department</p>
+<p th:if="${!FoundDepartment.isRefrigerated()}">- No refrigeration</p>
+<p th:text="'Responsible: '+${FoundDepartment.getResponsible().getFirstName()} + ' '+${FoundDepartment.getResponsible().getSurName()}"></p>
+<img onerror="this.src='img/noimage.jpg'" th:src="@{${FoundDepartment.getPhoto()}}">
+
+</body>
+</html>

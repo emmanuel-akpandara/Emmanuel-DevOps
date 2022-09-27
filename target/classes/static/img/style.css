@@ -1,0 +1,30 @@
+/*add a self-selected stylesheet here*/
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+html{
+    font-family: 'Ubuntu', sans-serif;
+    background-image: linear-gradient(to right, #ff9966, #ff5e62);
+
+}
+
+.DepSearch{
+    border-bottom-color: blue;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+}
+main{
+    padding: 5px;
+    background-image: linear-gradient(to right, #ff9966, #ff5e62);
+}
+li{
+    list-style-type: disc;
+}
+img{
+    width:100px;
+    border-radius: 20px;
+}
